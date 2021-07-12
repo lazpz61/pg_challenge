@@ -1,8 +1,7 @@
 //React imports
 import React, { Component } from 'react';
+import axios from 'axios';
 
-
-//
 
 export default class App extends Component {
   constructor(props){
@@ -12,13 +11,13 @@ export default class App extends Component {
       products: []
     }
 
-      this.ComponentDidMount = this.ComponentDidMount.bind(this);
+      this.componentDidMount = this.componentDidMount.bind(this);
   }
 
-  ComponentDidMount(){
+  componentDidMount(){
     fetch('https://fakestoreapi.com/products')
               .then(res=>res.json())
-              .then(res => this.setState({
+              .then(res=> this.setState({
                 products: res
               }))
               .catch(error => console.log("error bringing in products", error))
