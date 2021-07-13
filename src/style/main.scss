@@ -19,7 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
-  background-color: aqua;
+  background-color: #00ff62;
 }
 
 .app {
@@ -27,3 +27,5 @@ body {
   display: grid;
   justify-items: center;
 }
+
+// Product display in a flex container with each item in its own grid

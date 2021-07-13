@@ -1,6 +1,9 @@
 //React imports
 import React, { Component } from 'react';
 
+//internal imports 
+import SearchBar from './search-bar';
+
 
 export default class App extends Component {
   constructor(props){
@@ -11,8 +14,10 @@ export default class App extends Component {
     }
 
       this.componentDidMount = this.componentDidMount.bind(this);
-      this.renderProducts = this.renderProducts.bind(this);
+      this.renderMainProductsDisplay = this.renderMainProductsDisplay.bind(this);
   }
+
+// This is the fetch call for pulling the API
 
 componentDidMount(){
     fetch('https://fakestoreapi.com/products')
@@ -23,32 +28,32 @@ componentDidMount(){
               .catch(error => console.log("error bringing in products", error))
              
   }
-  
-  renderProducts(){
-    return this.state.products.map(item => {
-      return <div> </div>
-    })
+// Function to be able to pull display the products from the fake store api
+  renderMainProductsDisplay(){
+    return   this.state.products.map(product => (
+      <div className="product-display" key={product.id}>
+      
+      <img src={product.image} />
+      {product.title}
+      {product.price}
+      {product.description}
+      </div>
+    ))
 
   }
 
   render() {
-    const { products} = this.state;
     return (
           <div className='app'>
             
             <h1>Laz's E-Commerce Web App</h1>
-          
-          <ul>
-            {products.map(product => (
-              <div className="product-display" key={product.id}>
-              
-              <img src={product.image} />
-              {product.title}
-              {product.price}
-              {product.description}
-              </div>
-            ))}
-          </ul>
+            <SearchBar />
+
+            
+            <div className="display-flex-container">
+                {this.renderMainProductsDisplay()}
+            </div>
+
            
             
           </div>
