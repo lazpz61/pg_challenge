@@ -31,8 +31,8 @@ body {
 .product-display {
   display: flex;
   flex-direction: column;
-  //   flex-wrap: wrap;
-  //   justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 
   em {
     font-size: 25px;
@@ -50,14 +50,3 @@ body {
     font-size: 13px;
   }
 }
-
-// .product-display img {
-//   width: 30%;
-//   height: 30%;
-// }
-
-// .product-display strong {
-//   font-size: 20px;
-// }
-
-// Product display in a flex container with each item in its own grid

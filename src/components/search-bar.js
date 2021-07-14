@@ -9,7 +9,7 @@ export default class Search extends Component {
         }
       }
 
-
+//Was code is to run an event when a user searches for a product
 onChange = event => {
     this.setState({search: event.target.value})
   }
